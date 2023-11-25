@@ -1,7 +1,7 @@
 ---
 import Head from "../components/Head.astro"
 import { siteConfig } from "../site.config";
-
+import ThemeProvider from "../components/ThemeProvider.astro";
 const {
     meta: {title, description = siteConfig.description},
 
@@ -12,6 +12,7 @@ const {
     <head>
         <Head title={title} description={description}/>
     </head>
+    <ThemeProvider/>
     <main id="main">
         <slot />
     </main>
