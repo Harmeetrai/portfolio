@@ -21,3 +21,9 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/posts/",
 	},
 ];
+
+export const social = {
+    gitHub: "https://github.com/Harmeetrai",
+    linkedIn: "https://www.linkedin.com/in/harmeet-rai-914386147/",
+    email: "mailto:harmeetrai18@gmail.com",
+};

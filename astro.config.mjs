@@ -9,7 +9,7 @@ import remarkReadingTime from "./src/utils/remark-reading-time.ts"
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://astro-cactus.chriswilliams.dev/",
+	site: "https://harmeetrai.com",
 
 	integrations: [
 		mdx({}),
