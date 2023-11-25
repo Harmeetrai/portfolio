@@ -1,0 +1,18 @@
+---
+import Head from "../components/Head.astro"
+import { siteConfig } from "../site.config";
+
+const {
+    meta: {title, description = siteConfig.description},
+
+} = Astro.props;
+---
+
+<html>
+    <head>
+        <Head title={title} description={description}/>
+    </head>
+    <main id="main">
+        <slot />
+    </main>
+</html>
