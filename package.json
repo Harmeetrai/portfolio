@@ -15,6 +15,7 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@types/typed.js": "^2.0.9"
+    "@types/typed.js": "^2.0.9",
+    "tailwindcss": "^3.3.5"
   }
 }
