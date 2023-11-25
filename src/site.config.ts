@@ -4,6 +4,7 @@ export const siteConfig: SiteConfig = {
     author: 'Harmeet Rai',
     title: 'Harmeet Ra',
     description: 'Harmeet Rai\'s personal website',
+    includeViewTransitions: true
 };
 
 // Used to generate links in both the Header & Footer.
