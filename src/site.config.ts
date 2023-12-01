@@ -4,6 +4,14 @@ export const siteConfig: SiteConfig = {
     author: 'Harmeet Rai',
     title: 'Harmeet Ra',
     description: 'Harmeet Rai\'s personal website',
+	date: {
+		locale: "en-GB",
+		options: {
+			day: "numeric",
+			month: "short",
+			year: "numeric",
+		},
+	},
     includeViewTransitions: true
 };
 
