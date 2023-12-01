@@ -7,7 +7,7 @@
 		);
 	}
 
-	function setTheme(newTheme) {
+	function setTheme(newTheme: "light" | "dark") {
 		if (!newTheme || (newTheme !== "light" && newTheme !== "dark")) {
 			return console.warn(
 				`Incorrect theme value received. Expected 'light' or 'dark', received ${newTheme}`,
@@ -28,7 +28,9 @@
 		document.documentElement.classList.toggle("dark", newTheme === "dark");
 		const bgColour = getComputedStyle(document.body).getPropertyValue("--theme-bg");
 
-		colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
+		if (colorThemeMetaTag) {
+			colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
+		}
 		if (typeof localStorage !== "undefined") {
 			localStorage.setItem("theme", newTheme);
 		}

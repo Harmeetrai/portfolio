@@ -14,13 +14,18 @@
 		  root.classList.toggle('dark', isDark);
 		};
   
-		// Set theme on page load
-		setTheme(prefersDarkMode.matches);
+		// Check for a stored theme preference
+		const storedTheme = localStorage.getItem('theme');
+  
+		// Set the theme based on the stored preference or system preference
+		setTheme(storedTheme === 'dark' || (storedTheme === null && prefersDarkMode.matches));
   
 		// Listen for changes in system theme
 		prefersDarkMode.addEventListener('change', (e) => {
 		  const isDark = e.matches;
 		  setTheme(isDark);
+		  // Store the system theme preference
+		  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 		});
   
 		// MutationObserver for html class changes, as the theme could be changed elsewhere
@@ -29,6 +34,8 @@
 			if (mutation.type === "attributes" && mutation.attributeName === "class") {
 			  const rootIsDark = (mutation.target as Element).classList.contains("dark");
 			  setTheme(rootIsDark);
+			  // Store the theme preference
+			  localStorage.setItem('theme', rootIsDark ? 'dark' : 'light');
 			}
 		  }
 		});
@@ -40,6 +47,9 @@
   
 		  // Toggle theme
 		  root.classList.toggle('dark', !isDark);
+  
+		  // Update the stored theme preference
+		  localStorage.setItem('theme', isDark ? 'light' : 'dark');
   
 		  // invert theme
 		  const themeChangeEvent = new CustomEvent("theme-change", {
@@ -54,12 +64,8 @@
 	}
   
 	customElements.define("theme-toggle", ThemeToggle);
-  
-	// Alternatively, if you are using the 'DOMContentLoaded' event:
-	// document.addEventListener('DOMContentLoaded', () => {
-	//   // Your logic to set the theme here
-	// });
   </script>
+  
   
   
 
