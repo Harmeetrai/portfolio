@@ -13,10 +13,16 @@ const {
 ---
 
 <html>
-    <head>
-        <Head title={title} description={description}/>
-    	{<ViewTransitions fallback="none" transition:persist/>}
-    </head>
+	<head>
+		<Head title={title} description={description}/>
+		{
+			/* 
+			Set a fallback set -> https://docs.astro.build/en/guides/view-transitions/#fallback-control
+			This is set to false by default in src/site.config.ts 
+			*/
+		}
+		{siteConfig.includeViewTransitions && <ViewTransitions />}
+	</head>
     <ThemeProvider/>
     <Header/>
     <main id="main">

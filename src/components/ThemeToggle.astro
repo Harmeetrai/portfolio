@@ -1,48 +1,68 @@
 <script>
 	import { rootHasDarkClass } from "../utils/domElement.ts";
-
+  
 	class ThemeToggle extends HTMLElement {
-		constructor() {
-			super();
-			const button = this.querySelector("button") as HTMLButtonElement;
-			const root = document.documentElement;
-
-			if (button) {
-				// set inital aria-pressed value
-				button.setAttribute("aria-pressed", String(rootHasDarkClass()));
-
-				// MutationObserver for html class changes, as the theme could be changed elsewhere
-				const observer = new MutationObserver((mutationsList) => {
-					for (const mutation of mutationsList) {
-						if (mutation.type === "attributes" && mutation.attributeName === "class") {
-							const rootIsDark = (mutation.target as Element).classList.contains("dark");
-							button.setAttribute("aria-pressed", String(rootIsDark));
-						}
-					}
-				});
-				observer.observe(root, { attributeFilter: ["class"] });
-
-				// button clicked, fire event
-				button.addEventListener("click", (e) => {
-					if (e.currentTarget instanceof HTMLButtonElement) {
-						let isDark = rootHasDarkClass();
-
-						// invert theme
-						let themeChangeEvent = new CustomEvent("theme-change", {
-							detail: {
-								theme: isDark ? "light" : "dark",
-							},
-						});
-						// dispatch event -> ThemeProvider.astro
-						document.dispatchEvent(themeChangeEvent);
-					}
-				});
+	  constructor() {
+		super();
+		const button = this.querySelector("button") as HTMLButtonElement;
+		const root = document.documentElement;
+  
+		const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+  
+		const setTheme = (isDark) => {
+		  button.setAttribute("aria-pressed", String(isDark));
+		  root.classList.toggle('dark', isDark);
+		};
+  
+		// Set theme on page load
+		setTheme(prefersDarkMode.matches);
+  
+		// Listen for changes in system theme
+		prefersDarkMode.addEventListener('change', (e) => {
+		  const isDark = e.matches;
+		  setTheme(isDark);
+		});
+  
+		// MutationObserver for html class changes, as the theme could be changed elsewhere
+		const observer = new MutationObserver((mutationsList) => {
+		  for (const mutation of mutationsList) {
+			if (mutation.type === "attributes" && mutation.attributeName === "class") {
+			  const rootIsDark = (mutation.target as Element).classList.contains("dark");
+			  setTheme(rootIsDark);
 			}
-		}
+		  }
+		});
+		observer.observe(root, { attributeFilter: ["class"] });
+  
+		// button clicked, fire event
+		button.addEventListener("click", () => {
+		  const isDark = rootHasDarkClass();
+  
+		  // Toggle theme
+		  root.classList.toggle('dark', !isDark);
+  
+		  // invert theme
+		  const themeChangeEvent = new CustomEvent("theme-change", {
+			detail: {
+			  theme: isDark ? "light" : "dark",
+			},
+		  });
+		  // dispatch event -> ThemeProvider.astro
+		  document.dispatchEvent(themeChangeEvent);
+		});
+	  }
 	}
-
+  
 	customElements.define("theme-toggle", ThemeToggle);
-</script>
+  
+	// Alternatively, if you are using the 'DOMContentLoaded' event:
+	// document.addEventListener('DOMContentLoaded', () => {
+	//   // Your logic to set the theme here
+	// });
+  </script>
+  
+  
+
 
 <theme-toggle class="ms-2 sm:ms-4">
 	<button
