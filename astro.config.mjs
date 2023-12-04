@@ -5,12 +5,24 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import remarkUnwrapImages from "remark-unwrap-images";
-import remarkReadingTime from "./src/utils/remark-reading-time.ts"
+import rehypeExternalLinks from "rehype-external-links";
+import { remarkReadingTime } from "./src/utils/remark-reading-time";
+
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://harmeetrai.com",
-
+	site: "https://astro-cactus.chriswilliams.dev/",
+	markdown: {
+		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+		rehypePlugins: [
+			[rehypeExternalLinks, { target: "_blank", rel: ["nofollow, noopener, noreferrer"] }],
+		],
+		remarkRehype: { footnoteLabelProperties: { className: [""] } },
+		shikiConfig: {
+			theme: "dracula",
+			wrap: true,
+		},
+	},
 	integrations: [
 		mdx({}),
 		tailwind({
