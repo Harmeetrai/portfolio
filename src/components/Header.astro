@@ -44,7 +44,6 @@ const url = new URL(Astro.request.url);
 			aria-current={url.pathname === "/" ? "page" : false}
 		>
 
-			<span class="text-xl font-bold sm:text-2xl">Harmeet Rai</span>
 		</a>
 		<nav
 			id="navigation-menu"
@@ -65,7 +64,9 @@ const url = new URL(Astro.request.url);
 			}
 		</nav>
 	</div>
+	<div class="flex-grow"></div>
 	<ThemeToggle />
+	
 	<mobile-button>
 		<button
 			id="toggle-navigation-menu"
