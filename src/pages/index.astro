@@ -1,35 +1,51 @@
 ---
-import Base from '../layouts/Base.astro';
-import { siteConfig } from '../site.config';
-import SocialList from '../components/SocialList.astro';
+import Base from "../layouts/Base.astro";
+import SocialList from "../components/SocialList.astro";
 import { getAllPosts, sortMDByDate } from "@/utils";
 import PostPreview from "@/components/blog/PostPreview";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-const name = siteConfig.author;
 ---
-<Base meta={{title: "Home"}}>
-	<section>
-		<h1 class="title mb-6">👋🏽 Hello, Welcome to my Site!</h1>
-		<p>I am a dedicated computer science student currently pursuing my academic journey at Simon Fraser University. 
-			My passion lies in leveraging technology to address tangible challenges in the world around us. </p>
-		<br/>
-		
-		<SocialList/>
 
-		<section aria-label="Blog post list" class="mt-16">
-			<h2 class="title mb-4 text-xl">Posts</h2>
-			<ul class="space-y-4 sm:space-y-2">
-				{
-					allPostsByDate.map((p) => (
-						<li class="flex flex-col gap-x-2 sm:flex-row">
-							<PostPreview post={p} />
-						</li>
-					))
-				}
-			</ul>
-		</section>
-	</section>
+<Base meta={{ title: "Home" }}>
+  <section>
+    <h1 class="title mb-6">👋🏽 Hello, Welcome to my Site!</h1>
+    <p>
+      I am a dedicated computer science student currently pursuing my academic
+      journey at Simon Fraser University. My passion lies in leveraging
+      technology to address tangible challenges in the world around us.
+    </p>
+    <br />
+
+    <SocialList />
+
+    <section aria-label="Blog post list" class="mt-16">
+      <h2 class="title mb-4 text-xl">Posts</h2>
+      <ul class="space-y-4 sm:space-y-2">
+        {
+          allPostsByDate.map((p) => (
+            <li class="flex flex-col gap-x-2 sm:flex-row">
+              <PostPreview post={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section aria-label="Experience" class="mt-16">
+      <h2 class="title mb-4 text-xl">Experience</h2>
+      <ul class="space-y-4 sm:space-y-2">
+        <div class="flex flex-row">
+          <h3 class="text-lg font-semibold">Redmane Technology</h3>
+          <p class="flex-end ml-auto text-sm text-gray-500">Burnaby, B.C.</p>
+        </div>
+        <div class="flex flex-row">
+          <p>Software Developer Intern</p>
+          <p class="flex-end ml-auto text-sm text-gray-500">Jan 2023 - Aug 2023</p>
+        </div>
+      </ul>
+    </section>
+  </section>
 </Base>
