@@ -21,7 +21,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
     <SocialList />
 
-    <section aria-label="Blog post list" class="mt-16" >
+    <section aria-label="Blog post list" class="mt-16">
       <h2 class="title mb-4 text-xl">Posts</h2>
       <ul class="space-y-4 sm:space-y-2">
         {
@@ -32,16 +32,22 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
           ))
         }
       </ul>
-	  <span class="mt-4 block sm:text-end">
-		<a class="sm:hover:text-accent" href="/posts" aria-label="View all posts">
-			View all →
-		</a>
-	</span>    </section>
+      <span class="mt-4 block sm:text-end">
+        <a
+          class="sm:hover:text-accent"
+          href="/posts"
+          aria-label="View all posts"
+        >
+          View all →
+        </a>
+      </span>
+    </section>
 
     <section aria-label="Experience" class="mt-16">
       <h2 class="title mb-4 text-xl">Experience</h2>
       <div class="relative mt-10">
-		<div class="absolute inset-1 bg-accent rounded-lg blur-lg opacity-100"></div>
+        <div class="absolute inset-1 bg-accent rounded-lg blur-lg opacity-100">
+        </div>
         <ul
           class="relative space-y-4 sm:space-y-2 p-5 rounded-lg outline-accent bg-accent bg-brightness-30 text-white"
         >
@@ -51,9 +57,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
           </div>
           <div class="flex flex-row">
             <p>Software Developer Intern</p>
-            <p class="flex-end ml-auto text-sm">
-              Jan 2023 - Aug 2023
-            </p>
+            <p class="flex-end ml-auto text-sm">Jan 2023 - Aug 2023</p>
           </div>
           <ul class="space-y-4 sm:space-y-2 p-5 list-disc">
             <li>
