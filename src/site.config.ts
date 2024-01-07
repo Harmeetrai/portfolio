@@ -2,7 +2,7 @@ import type { SiteConfig } from './types';
 
 export const siteConfig: SiteConfig = {
     author: 'Harmeet Rai',
-    title: 'Harmeet Ra',
+    title: 'Harmeet Rai',
     description: 'Harmeet Rai\'s personal website',
 	date: {
 		locale: "en-GB",
