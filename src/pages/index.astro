@@ -21,7 +21,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
     <SocialList />
 
-    <section aria-label="Blog post list" class="mt-16">
+    <section aria-label="Blog post list" class="mt-16" >
       <h2 class="title mb-4 text-xl">Posts</h2>
       <ul class="space-y-4 sm:space-y-2">
         {
@@ -32,7 +32,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
           ))
         }
       </ul>
-    </section>
+	  <span class="mt-4 block sm:text-end">
+		<a class="sm:hover:text-accent" href="/posts" aria-label="View all posts">
+			View all →
+		</a>
+	</span>    </section>
 
     <section aria-label="Experience" class="mt-16">
       <h2 class="title mb-4 text-xl">Experience</h2>
