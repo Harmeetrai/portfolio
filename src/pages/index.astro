@@ -45,11 +45,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
     <section aria-label="Experience" class="mt-16">
       <h2 class="title mb-4 text-xl">Experience</h2>
-      <div class="relative mt-10">
-        <div class="absolute inset-1 bg-accent rounded-lg blur-lg opacity-100">
+      <div class="relative mt-10 group">
+        <div class="absolute inset-1 bg-accent group-hover:blur-lg transition duration-200 rounded-lg opacity-100">
         </div>
         <ul
-          class="relative space-y-4 sm:space-y-2 p-5 rounded-lg outline-accent bg-accent bg-brightness-30 text-white"
+          class="relative space-y-4 sm:space-y-2 p-5 rounded-lg outline-accent bg-accent brightness-75 hover:brightness-100 transition duration-200 text-white "
         >
           <div class="flex flex-row">
             <h3 class="text-lg font-semibold">Redmane Technology</h3>
