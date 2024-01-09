@@ -17,3 +17,5 @@ It will always be up to you to find the lesson in every crappy situation and use
 Especially if you intend to thrive in a harsh world where you have to work for everything that matters. I’m not talking about material things. I’m talking about self-respect, self-love, and self-mastery.
 
 The rewards I seek are internal, and if you have that mindset, you will find opportunities for growth everywhere. During tough times, that growth can be exponential.
+
+Please check out David Goggins book ["Never Finished"](https://a.co/d/9barnz7)
