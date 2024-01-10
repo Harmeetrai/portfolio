@@ -25,6 +25,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Blog",
 		path: "/posts/",
 	},
+	{
+		title: "PKMS",
+		path: "https://pkms.harmeetrai.com/",
+	}
 ];
 
 export const social = {
