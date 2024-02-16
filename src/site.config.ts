@@ -43,13 +43,13 @@ export const projects: Array<{ title: string; description: string, github: strin
 		description: "My personal website built with Next.js and Tailwind CSS.",
 		github: "https://github.com/Harmeetrai/portfolio/",
 		link: "https://harmeetrai.com",
-		image: "../public/Screenshot 2024-02-16 104923.png"
+		image: "../public/abstract-green.jpg"
 	},
 	{
 		title: "Harmeet Rai",
 		description: "My personal website built with Next.js and Tailwind CSS.",
 		github: "https://github.com/Harmeetrai/portfolio/",
 		link: "https://harmeetrai.com",
-		image: "../public/Screenshot 2024-02-16 104923.png"
+		image: "../public/abstract-green.jpg"
 	},
 ]
