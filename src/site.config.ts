@@ -28,6 +28,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: "PKMS",
 		path: "https://pkms.harmeetrai.com/",
+	},
+	{
+		title: "Resume",
+		path: "../public/resume.pdf",
 	}
 ];
 
