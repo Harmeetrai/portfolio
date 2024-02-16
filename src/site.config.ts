@@ -36,3 +36,11 @@ export const social = {
     linkedIn: "https://www.linkedin.com/in/harmeet-rai-914386147/",
     email: "mailto:harmeetrai18@gmail.com",
 };
+
+export const projects: Array<{ title: string; description: string, link: string }> = [
+	{
+		title: "Harmeet Rai",
+		description: "My personal website built with Next.js and Tailwind CSS.",
+		link: ""
+	}
+]
