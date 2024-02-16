@@ -3,7 +3,7 @@ import Head from "../components/Head.astro"
 import { siteConfig } from "../site.config";
 import ThemeProvider from "../components/ThemeProvider.astro";
 import Header from "../components/Header.astro";
-
+import Footer from "@/components/Footer";
 import { ViewTransitions } from 'astro:transitions';
 
 const {
@@ -28,5 +28,5 @@ const {
     <main id="main">
         <slot />
     </main>
-
+	<Footer/>
 </html>

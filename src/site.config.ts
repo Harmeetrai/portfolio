@@ -2,7 +2,7 @@ import type { SiteConfig } from './types';
 
 export const siteConfig: SiteConfig = {
     author: 'Harmeet Rai',
-    title: 'Harmeet Ra',
+    title: 'Harmeet Rai',
     description: 'Harmeet Rai\'s personal website',
 	date: {
 		locale: "en-GB",
@@ -22,13 +22,13 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/",
 	},
 	{
-		title: "About",
-		path: "/about/",
-	},
-	{
 		title: "Blog",
 		path: "/posts/",
 	},
+	{
+		title: "PKMS",
+		path: "https://pkms.harmeetrai.com/",
+	}
 ];
 
 export const social = {
