@@ -37,10 +37,19 @@ export const social = {
     email: "mailto:harmeetrai18@gmail.com",
 };
 
-export const projects: Array<{ title: string; description: string, link: string }> = [
+export const projects: Array<{ title: string; description: string, github: string, link: string, image: string }> = [
 	{
 		title: "Harmeet Rai",
 		description: "My personal website built with Next.js and Tailwind CSS.",
-		link: ""
-	}
+		github: "https://github.com/Harmeetrai/portfolio/",
+		link: "https://harmeetrai.com",
+		image: "../public/Screenshot 2024-02-16 104923.png"
+	},
+	{
+		title: "Harmeet Rai",
+		description: "My personal website built with Next.js and Tailwind CSS.",
+		github: "https://github.com/Harmeetrai/portfolio/",
+		link: "https://harmeetrai.com",
+		image: "../public/Screenshot 2024-02-16 104923.png"
+	},
 ]
