@@ -1,7 +1,3 @@
-Here's a section for your personal portfolio's README, which is built using Astro and TailwindCSS:
-
----
-
 # Personal Portfolio
 
 This is my personal portfolio website, showcasing my projects, skills, and experience. The website is built using Astro and styled with TailwindCSS for a modern and responsive design.
