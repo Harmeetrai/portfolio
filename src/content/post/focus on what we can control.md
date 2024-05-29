@@ -1,5 +1,5 @@
 ---
-title: "Focus on what we can control="
+title: "Focus on what we can control"
 description: "We should focus our efforts on things within our control while accepting with equanimity those that are not."
 publishDate: "9 Jan 2024"
 tags: ["discipline"]
